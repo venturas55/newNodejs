@@ -22,13 +22,6 @@ app.set('view engine','.hbs'); //PAra utilizar el app.engine
 
 
 //Middleware
-app.use(session({
-    secret: 'mysesion',
-    resave: false,
-    saveUninitialized:false,
-    store: new MySQLstore(database)
-}))
-app.use(flash());       // Para poder usar el middleware de enviar mensajes popups
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false})); //aceptar los datos desde los formularios sin aceptar imagenes ni nada raro
 app.use(express.json()); //Para enviar y recibir jsons.
